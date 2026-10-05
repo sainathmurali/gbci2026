@@ -1,0 +1,11 @@
+{
+  "name": "gbci2026-poster-companion",
+  "version": "1.0.0",
+  "description": "Poster Companion Website for 10th Graz Brain-Computer Interface Conference 2026",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["bci", "motor-imagery", "riemannian-geometry", "graz-bci-2026", "iit-bombay"],
+  "author": "Sainath Murali <bionichuman.cc>",
+  "license": "MIT"
+}

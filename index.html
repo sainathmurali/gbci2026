@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Poster #105: Beyond Hemispheric Laterality | 10th Graz BCI Conference 2026</title>
+  <meta name="description" content="Poster Presentation #105 at the 10th Graz Brain-Computer Interface Conference 2026. Riemannian Metrics as Markers of Motor Imagery Performance in BCI Training.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- KaTeX Publication-Grade Mathematics -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Sticky Navigation Header (Apple HIG Frosted Glass)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="brand-wrapper">
+        <span class="paper-number-pill">Poster #105</span>
+        <span class="brand-title">Graz BCI 2026</span>
+      </div>
+
+      <!-- Section Fast-Jump Pills -->
+      <nav class="nav-section-jumps" aria-label="Poster Sections">
+        <button type="button" class="jump-pill active" data-jump="overview">Overview</button>
+        <button type="button" class="jump-pill" data-jump="intro">1. Intro</button>
+        <button type="button" class="jump-pill" data-jump="aim">2. Aim</button>
+        <button type="button" class="jump-pill" data-jump="method">3. Method</button>
+        <button type="button" class="jump-pill" data-jump="results">4. Results</button>
+        <button type="button" class="jump-pill" data-jump="conclusion">5. Conclusion</button>
+        <button type="button" class="jump-pill" data-jump="references">6. Refs &amp; PDF</button>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button type="button" class="btn-header-action primary" id="btn-open-qa" title="Ask a question directly to the author">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>Ask a Question</span>
+        </button>
+
+        <button type="button" class="btn-header-action" id="btn-open-about" title="About the author and PI">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <span>About</span>
+        </button>
+
+        <button type="button" class="btn-header-action" id="btn-open-pdf" title="Read submitted manuscript (PDF)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+          <span>Paper (PDF)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       FULLSCREEN PARALLAX POSTER BACKGROUND STAGE
+       ========================================================================= -->
+  <aside id="parallax-poster-stage" aria-label="Physical Poster Background Stage">
+    <!-- Ambient Full-Bleed Backdrop: Warm ambient illumination, no black borders -->
+    <img src="assets/poster.jpg" alt="Ambient Backdrop" class="ambient-poster-backdrop">
+
+    <!-- Static Centered Poster Canvas (Stays completely static) -->
+    <div id="fullscreen-poster-canvas">
+      <!-- Base Layer: Softly Blurred Poster Background (All inactive sections) -->
+      <img src="assets/poster.jpg" alt="Poster #105 Background Blur" class="poster-layer blur-layer">
+
+      <!-- Sharp Cutout Mask: The active section remains 100% razor sharp -->
+      <div id="poster-sharp-mask" style="clip-path: inset(0% 0% 0% 0% round 0px);">
+        <img src="assets/poster.jpg" alt="Poster #105 Sharp Active Section" class="poster-layer sharp-layer">
+      </div>
+
+      <!-- Glowing Highlight Frame: Dynamically glides to the active section (hidden during landing) -->
+      <div id="poster-highlight-frame" style="opacity: 0; top: 10.68%; left: 0.69%; width: 49.10%; height: 17.92%;" title="Click to explore this section in detail">
+        <div class="frame-know-more-badge">
+          <span>Know More</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       FLOATING APPLE SECTION STEPPER (Vertical on Desktop)
+       ========================================================================= -->
+  <nav class="floating-stepper-capsule" id="floating-stepper" aria-label="Poster Sections Stepper">
+    <button type="button" class="stepper-pill-dot active" data-step="overview" title="Poster Overview">
+      <span class="dot-circle">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      </span>
+      <span class="dot-label">Overview</span>
+    </button>
+    <button type="button" class="stepper-pill-dot" data-step="intro" title="1. Introduction">
+      <span class="dot-circle">1</span>
+      <span class="dot-label">Introduction</span>
+    </button>
+    <button type="button" class="stepper-pill-dot" data-step="aim" title="2. Aim">
+      <span class="dot-circle">2</span>
+      <span class="dot-label">Aim</span>
+    </button>
+    <button type="button" class="stepper-pill-dot" data-step="method" title="3. Methodology">
+      <span class="dot-circle">3</span>
+      <span class="dot-label">Methodology</span>
+    </button>
+    <button type="button" class="stepper-pill-dot" data-step="results" title="4. Results">
+      <span class="dot-circle">4</span>
+      <span class="dot-label">Results</span>
+    </button>
+    <button type="button" class="stepper-pill-dot" data-step="conclusion" title="5. Conclusion">
+      <span class="dot-circle">5</span>
+      <span class="dot-label">Conclusion</span>
+    </button>
+    <button type="button" class="stepper-pill-dot" data-step="references" title="6. References">
+      <span class="dot-circle">6</span>
+      <span class="dot-label">References</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       PERSISTENT FLOATING APPLE SECTION CONTROLLER (Bottom Docked)
+       ========================================================================= -->
+  <aside class="floating-section-capsule" id="floating-section-capsule" aria-label="Active Section Controller">
+    <button type="button" class="capsule-nav-btn" id="btn-capsule-prev" title="Previous Section" aria-label="Previous Section">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    
+    <div class="capsule-info-group" id="capsule-info-group" title="Tap to explore section details">
+      <span class="capsule-step-badge" id="capsule-step-badge">1</span>
+      <div class="capsule-text-group">
+        <span class="capsule-title" id="capsule-title">1. Introduction</span>
+        <span class="capsule-subtitle" id="capsule-subtitle">Background &amp; Problem</span>
+      </div>
+    </div>
+
+    <button type="button" class="capsule-nav-btn" id="btn-capsule-next" title="Next Section" aria-label="Next Section">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </aside>
+
+  <!-- =========================================================================
+       FOREGROUND SCROLL TRACK & FLOATING EXPLANATION GLASS CARDS
+       ========================================================================= -->
+  <main id="parallax-scroll-track">
+
+    <!-- =======================================================================
+         STAGE 0: Landing Overview (Whole Poster View)
+         Unblurred, full view, no card obstructing the poster
+         ======================================================================= -->
+    <section class="section-scroll-stage stage-align-center stage-overview-landing active" id="stage-overview" data-section="overview">
+      <div class="landing-companion-deck" id="landing-companion-deck" role="region" aria-label="Interactive Companion Navigator">
+        <!-- Deck Header Row: Pulse + Title + Scroll Down Prompt -->
+        <div class="deck-header-row">
+          <div class="deck-title-group">
+            <span class="deck-pulse-indicator" aria-hidden="true"></span>
+            <div class="deck-labels">
+              <span class="deck-badge">Interactive Companion</span>
+              <span class="deck-headline">6 Guided Deep-Dive Sections</span>
+            </div>
+          </div>
+          
+          <button type="button" class="btn-deck-scroll" id="btn-deck-scroll" title="Scroll down to explore sections">
+            <span>Scroll down</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+
+        <!-- Quick Jump Section Chips: Styled with poster color scheme -->
+        <div class="deck-chips-bar" aria-label="Quick jump to poster sections">
+          <button type="button" class="deck-chip" data-jump="intro" title="Jump to 1. Introduction">
+            <span class="deck-chip-num teal">1</span>
+            <span>Intro</span>
+          </button>
+          <button type="button" class="deck-chip" data-jump="aim" title="Jump to 2. Aim &amp; Hypothesis">
+            <span class="deck-chip-num coral">2</span>
+            <span>Aim</span>
+          </button>
+          <button type="button" class="deck-chip" data-jump="method" title="Jump to 3. Methodology">
+            <span class="deck-chip-num teal">3</span>
+            <span>Method</span>
+          </button>
+          <button type="button" class="deck-chip" data-jump="results" title="Jump to 4. Results &amp; Metrics">
+            <span class="deck-chip-num sage">4</span>
+            <span>Results</span>
+          </button>
+          <button type="button" class="deck-chip" data-jump="conclusion" title="Jump to 5. Conclusion">
+            <span class="deck-chip-num coral">5</span>
+            <span>Conclusion</span>
+          </button>
+          <button type="button" class="deck-chip" data-jump="references" title="Jump to 6. References &amp; Materials">
+            <span class="deck-chip-num teal">6</span>
+            <span>Refs</span>
+          </button>
+          <button type="button" class="deck-chip author-chip" id="btn-deck-chat" title="Chat directly with author Sainath Murali">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Ask Author</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clean, unobstructed scroll stages for camera navigation -->
+    <section class="section-scroll-stage" id="stage-intro" data-section="intro" aria-label="1. Introduction"></section>
+    <section class="section-scroll-stage" id="stage-aim" data-section="aim" aria-label="2. Aim &amp; Hypothesis"></section>
+    <section class="section-scroll-stage" id="stage-method" data-section="method" aria-label="3. Methodology"></section>
+    <section class="section-scroll-stage" id="stage-results" data-section="results" aria-label="4. Results &amp; Metrics"></section>
+    <section class="section-scroll-stage" id="stage-conclusion" data-section="conclusion" aria-label="5. Conclusion"></section>
+    <section class="section-scroll-stage" id="stage-references" data-section="references" aria-label="6. References &amp; Materials"></section>
+  </main><!-- /#parallax-scroll-track -->
+
+  <!-- =========================================================================
+       MODAL: Section Detail Sheet (Apple HIG Modal Sheet for 'Know More')
+       ========================================================================= -->
+  <div class="modal-overlay" id="section-detail-modal" aria-hidden="true" role="dialog" aria-labelledby="sheet-modal-title">
+    <div class="modal-window section-detail-sheet-window">
+      <div class="sheet-drag-handle"></div>
+      <div class="modal-header-bar">
+        <div class="modal-title-group">
+          <div class="section-number-disc" id="sheet-modal-num">1</div>
+          <div>
+            <span class="modal-category-tag" id="sheet-modal-tag">Background &amp; Problem</span>
+            <h3 class="modal-title" id="sheet-modal-title">Introduction</h3>
+          </div>
+        </div>
+        <button type="button" class="btn-modal-close" id="btn-close-section-modal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-scroll-body" id="sheet-modal-body">
+        <!-- Injected dynamically from section store -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden Section Content Payloads Store -->
+  <div id="section-content-store" style="display: none;" aria-hidden="true">
+    <div id="payload-stage-intro">
+      <div class="intro-headline-banner">
+        <h4 class="intro-section-title">Background &amp; The BCI Illiteracy Problem</h4>
+      </div>
+
+      <!-- Motor Imagery BCI -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">Motor Imagery BCI</h4>
+        <p class="narrative-body-text">
+          Motor imagery (MI)-based brain-computer interfaces (MI-BCIs) allow users to control external devices by imagining movements such as left- and right-hand movements.
+        </p>
+        <p class="narrative-body-text" style="margin-bottom:0;">
+          During MI, characteristic modulations occur in <button type="button" class="glossary-chip" data-term="smr-erd">Sensorimotor Rhythms (SMRs) &amp; ERD</button>, particularly in the mu and beta frequency bands. These neural patterns can be decoded to provide BCI control or neurofeedback.
+        </p>
+        <div class="intro-figure-card" data-term="smr-erd" style="cursor: pointer;" title="Click to view full detail &amp; neuroscientific context">
+          <img src="/assets/figures/zich_2015_erd.jpg" alt="Contralateral SMR ERD Topography (Zich et al., 2015)">
+          <div class="intro-figure-caption">
+            <strong>Sensorimotor Rhythm (SMR) Desynchronization:</strong> Topographical distribution showing localized contralateral ERD over motor cortex during imagery. Adapted from Zich et al. (2015). <span style="color: var(--accent-primary); font-weight: 600;">[Click to expand ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why do users differ? -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">Why Do Users Differ?</h4>
+        <p class="narrative-body-text">
+          Despite advances in signal processing and machine learning, MI-BCI performance remains highly variable across individuals.
+        </p>
+        <p class="narrative-body-text">
+          Approximately 10–30% of users fail to achieve reliable control, a phenomenon commonly referred to as <button type="button" class="glossary-chip" data-term="bci-illiteracy">BCI Illiteracy</button>.
+        </p>
+        <p class="narrative-body-text" style="margin-bottom:6px;">
+          MI-BCI control is increasingly viewed as a learnable cognitive-motor skill, requiring users to generate neural patterns that are:
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong>Stable</strong> within a class</li>
+          <li><strong>Discriminable</strong> between classes</li>
+        </ul>
+        <div class="intro-figure-card" data-term="bci-illiteracy" style="cursor: pointer;" title="Click to view full detail &amp; neuroscientific context">
+          <img src="/assets/figures/zich_2015_illiteracy.jpg" alt="Literate vs. Illiterate BCI Users (Zich et al., 2015)">
+          <div class="intro-figure-caption">
+            <strong>Literate vs. Illiterate User Profiles:</strong> Comparison of a literate user (top) showing distinct contralateral SMR ERD and localized motor cortex fMRI activation versus an illiterate user (bottom) showing absent ERD and lack of focal motor engagement. Adapted from Zich et al. (2015). <span style="color: var(--accent-primary); font-weight: 600;">[Click to expand ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Laterality Perspective -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">The Laterality Perspective</h4>
+        <p class="narrative-body-text">
+          Traditional MI-BCI evaluation relies primarily on classifier accuracy, with successful decoding commonly interpreted in terms of left–right neural separability and <button type="button" class="glossary-chip" data-term="hemispheric-laterality">Hemispheric Laterality</button>.
+        </p>
+        <p class="narrative-body-text" style="margin-bottom:0;">
+          However, classifier accuracy primarily reflects the separability of task-related neural representations. Effective BCI control may also depend on how consistently these representations are generated and how distinctly they differ from baseline activity.
+        </p>
+        <div class="intro-figure-card" data-term="hemispheric-laterality" style="cursor: pointer;" title="Click to view full detail &amp; neuroscientific context">
+          <img src="/assets/figures/zich_2015_laterality.jpg" alt="Hemispheric Laterality in Motor Imagery (Zich et al., 2015)">
+          <div class="intro-figure-caption">
+            <strong>Hemispheric Laterality:</strong> Cortical surface activation maps showing contralateral sensorimotor engagement during motor execution and motor imagery. Adapted from Zich et al. (2015). <span style="color: var(--accent-primary); font-weight: 600;">[Click to expand ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- A Multidimensional View -->
+      <div class="subcard-box tinted">
+        <h4 class="subcard-title">A Multidimensional View</h4>
+        <p class="narrative-body-text">
+          <button type="button" class="glossary-chip" data-term="riemannian-metrics">Riemannian Neural Metrics</button> operate directly on the covariance structure of multichannel EEG and quantify complementary dimensions of neural organization:
+        </p>
+
+        <div class="metrics-summary-table-wrapper">
+          <table class="metrics-summary-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>What It Captures</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Class distinctiveness</strong></td>
+                <td>Left ↔ Right imagery separation</td>
+              </tr>
+              <tr>
+                <td><strong>Class stability</strong></td>
+                <td>Within-class consistency</td>
+              </tr>
+              <tr>
+                <td><strong>Rest distinctiveness</strong></td>
+                <td>MI ↔ Baseline separation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <blockquote class="takeaway-callout-quote">
+          This motivates examining MI-BCI learning beyond hemispheric laterality alone.
+        </blockquote>
+      </div>
+
+      <button type="button" class="btn-next-section-jump" data-next="stage-aim">
+        <span>Next: 2. Aim &amp; Hypothesis</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div id="payload-stage-aim">
+      <div class="intro-headline-banner">
+        <h4 class="intro-section-title">2. Aim &amp; Hypothesis</h4>
+      </div>
+
+      <!-- Primary Aim -->
+      <div class="subcard-box tinted">
+        <h4 class="subcard-title">Primary Aim</h4>
+        <blockquote class="takeaway-callout-quote" style="margin-top:0; font-size: 0.94rem; border-left-color: var(--accent-primary); color: var(--accent-primary); background: rgba(43, 103, 119, 0.08);">
+          To investigate how Riemannian geometry-based neural metrics relate to users' reported MI-BCI performance across training.
+        </blockquote>
+      </div>
+
+      <!-- What We Investigated -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">What We Investigated</h4>
+        <ul class="aim-objectives-list">
+          <li>
+            <strong>Neural–behavioral relationship:</strong>
+            <span>Examine associations between class distinctiveness, class stability, rest distinctiveness and reported MI-BCI performance.</span>
+          </li>
+          <li>
+            <strong>Longitudinal adaptation:</strong>
+            <span>Track how these neural metrics change across 5 training runs.</span>
+          </li>
+          <li>
+            <strong>Learning trajectories:</strong>
+            <span>Compare neural adaptation across Improved, Unchanged, and Worsened behavioral groups.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Emerging Question -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">Emerging Question</h4>
+        <p class="narrative-body-text" style="font-style: italic; color: var(--text-primary); font-weight: 600; margin-bottom: 0; line-height: 1.55;">
+          “Do changes in MI-BCI performance reflect hemispheric laterality alone, or do multiple dimensions of neural organization contribute to learning?”
+        </p>
+      </div>
+
+      <!-- Hypothesis -->
+      <div class="subcard-box tinted" style="border-left: 4px solid var(--accent-secondary);">
+        <h4 class="subcard-title" style="color: var(--accent-secondary);">Hypothesis</h4>
+        <blockquote class="takeaway-callout-quote" style="margin-top:0; font-size: 0.94rem;">
+          Successful MI-BCI learning is associated with coordinated changes in class distinctiveness, class stability, and rest distinctiveness.
+        </blockquote>
+      </div>
+
+      <button type="button" class="btn-next-section-jump" data-next="stage-method">
+        <span>Next: 3. Methodology</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div id="payload-stage-method">
+      <div class="intro-headline-banner">
+        <h4 class="intro-section-title">3. Methodology &amp; Technical Pipeline</h4>
+      </div>
+
+      <!-- Overview Callout -->
+      <div class="subcard-box tinted" style="border-left: 4px solid var(--accent-primary);">
+        <p class="narrative-body-text" style="margin-bottom: 0; font-size: 0.95rem; font-weight: 500;">
+          We analyzed 64-channel EEG from 44 participants (Cho et al., 2017) performing left- and right-hand motor imagery across five training runs. Neural representations were quantified using three Riemannian geometry-based metrics across six frequency bands and related to longitudinal behavioral performance.
+        </p>
+      </div>
+
+      <!-- Interactive 5-Stage Technical Pipeline -->
+      <div class="method-pipeline-accordion">
+
+        <!-- Stage 1: Dataset & Behavioral Stratification -->
+        <details class="method-accordion-item" open>
+          <summary class="method-accordion-header">
+            <div class="accordion-title-group">
+              <span class="stage-step-pill">Stage 1</span>
+              <span class="accordion-heading">Dataset &amp; Behavioral Stratification</span>
+            </div>
+            <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="method-accordion-body">
+            <p class="narrative-body-text" style="font-size: 0.88rem; margin-bottom: 10px;">
+              We utilized the benchmark 64-channel EEG dataset from <strong>Cho et al. (2017) [4]</strong>, recording healthy participants performing cue-based left- and right-hand motor imagery across five training runs.
+            </p>
+            <div class="method-spec-grid">
+              <div class="spec-item">
+                <span class="spec-label">Dataset Source</span>
+                <span class="spec-value">Cho et al. (2017) [4] (Public MI Dataset)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Cohort Size</span>
+                <span class="spec-value">52 recruited &rarr; <strong>44 analyzed</strong> (19 female, age 24.8 &plusmn; 3.86)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">EEG System &amp; Rate</span>
+                <span class="spec-value">64-channel BioSemi ActiveTwo @ 512 Hz</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Task Paradigm</span>
+                <span class="spec-value">Left- vs. Right-hand Motor Imagery (MI)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Protocol Volume</span>
+                <span class="spec-value">5 runs &times; 20 trials/class (200 trials/participant)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Post-Run Reports</span>
+                <span class="spec-value">Expected Performance (%) &amp; Imagery Difficulty</span>
+              </div>
+            </div>
+
+            <div class="subcard-box" style="margin: 14px 0 0 0; background: #FFFFFF; padding: 14px 18px;">
+              <h5 style="font-size: 0.90rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 6px;">Behavioral Learning Trajectory</h5>
+              <p class="narrative-body-text" style="font-size: 0.88rem; margin-bottom: 8px;">
+                Expected MI-BCI performance was used to characterize longitudinal learning. For each participant, an Ordinary Least Squares (OLS) regression was fitted:
+              </p>
+              <div class="term-math-box" style="margin: 8px 0; padding: 8px 12px;">
+                $$\text{Expected Performance} \sim \text{Run} \quad \longrightarrow \quad \text{Slope (\% change / run)}$$
+              </div>
+              <div class="cohort-badges-row" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+                <span class="cohort-badge improved"><strong>Improved</strong> ($n = 15$): Positive Slope</span>
+                <span class="cohort-badge unchanged"><strong>Unchanged</strong> ($n = 16$): Intermediate Slope</span>
+                <span class="cohort-badge worsened"><strong>Worsened</strong> ($n = 13$): Negative Slope</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Stage 2: EEG Processing & Epoching -->
+        <details class="method-accordion-item" open>
+          <summary class="method-accordion-header">
+            <div class="accordion-title-group">
+              <span class="stage-step-pill">Stage 2</span>
+              <span class="accordion-heading">EEG Preprocessing &amp; Epoching</span>
+            </div>
+            <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="method-accordion-body">
+            <p class="narrative-body-text" style="margin-bottom: 8px;">
+              Raw signals were preprocessed in <strong>MNE-Python</strong> using a standardized 10-step cleaning pipeline:
+            </p>
+
+            <ol class="numbered-pipeline-list">
+              <li><strong>DC Offset Correction &amp; Linear Detrending</strong></li>
+              <li><strong>0.1–50 Hz Band-Pass Filtering</strong> &amp; <strong>60 Hz Notch Filtering</strong></li>
+              <li><strong>RANSAC Noisy-Channel Repair</strong></li>
+              <li><strong>Artifact Subspace Reconstruction (ASR)</strong> for transient artifact removal</li>
+              <li><strong>Infomax Independent Component Analysis (ICA)</strong></li>
+              <li><strong>mne-icalabel Automated Identification</strong> (components with &gt;90% artifact probability removed)</li>
+              <li><strong>Noisy-Channel Spherical Spline Interpolation</strong></li>
+              <li><strong>Common Average Reference (CAR) Re-referencing</strong></li>
+            </ol>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 14px;">
+              <!-- Epoching Box -->
+              <div class="subcard-box" style="margin: 0; background: #FFFFFF; padding: 14px;">
+                <h5 style="font-size: 0.88rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 6px;">Epoching Windows</h5>
+                <ul class="clean-bullet-list" style="margin: 0; font-size: 0.84rem;">
+                  <li><strong>Full Epoch:</strong> &minus;1.99 s to +5.0 s relative to cue onset</li>
+                  <li><strong>Motor Imagery Window:</strong> 0.0 s to 3.0 s (active task)</li>
+                  <li><strong>Resting Reference:</strong> &minus;1.99 s to 0.0 s (trial-wise pre-cue baseline)</li>
+                </ul>
+              </div>
+
+              <!-- Frequency Bands Table -->
+              <div class="subcard-box" style="margin: 0; background: #FFFFFF; padding: 14px;">
+                <h5 style="font-size: 0.88rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 6px;">6 Spectral Bands</h5>
+                <div class="metrics-summary-table-wrapper" style="margin: 0;">
+                  <table class="metrics-summary-table" style="font-size: 0.80rem;">
+                    <thead>
+                      <tr><th>Band</th><th>Frequency Range</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td><strong>Delta</strong></td><td>1–4 Hz</td></tr>
+                      <tr><td><strong>Theta</strong></td><td>4–8 Hz</td></tr>
+                      <tr><td><strong>Alpha</strong></td><td>8–13 Hz</td></tr>
+                      <tr><td><strong>Beta</strong></td><td>13–30 Hz</td></tr>
+                      <tr><td><strong>Gamma</strong></td><td>30–45 Hz</td></tr>
+                      <tr><td><strong>Broadband</strong></td><td>0.1–50 Hz</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Stage 3: Riemannian Neural Metrics -->
+        <details class="method-accordion-item" open>
+          <summary class="method-accordion-header">
+            <div class="accordion-title-group">
+              <span class="stage-step-pill">Stage 3</span>
+              <span class="accordion-heading">Riemannian Neural Metrics</span>
+            </div>
+            <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="method-accordion-body">
+            <blockquote class="takeaway-callout-quote" style="margin: 0 0 14px 0; font-size: 0.90rem; border-left-color: var(--accent-primary); color: var(--text-primary); background: rgba(43, 103, 119, 0.07);">
+              Each MI trial was represented by its multichannel covariance structure. These covariance matrices were analyzed using Riemannian geometry on the manifold $\mathcal{S}_{++}^n$ and the three classifier-independent metrics proposed by Lotte &amp; Jeunet [9].
+            </blockquote>
+
+            <!-- Three Clickable Metric Formula Cards -->
+            <div class="subcard-grid-3" style="margin: 12px 0;">
+              <!-- Metric 1: Class Distinctiveness -->
+              <div class="mini-metric-pill-card" style="border-top: 3px solid var(--accent-primary);">
+                <div style="font-size: 0.70rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase;">Left MI &harr; Right MI</div>
+                <h5 style="font-size: 0.92rem; margin: 4px 0;">Class Distinctiveness</h5>
+                <p style="font-size: 0.80rem; color: var(--text-secondary); margin-bottom: 8px;">
+                  Measures separation between the two imagery classes on the manifold.
+                </p>
+                <div class="term-math-box" style="font-size: 0.82rem; padding: 6px;">
+                  $$\text{classDis}(A,B) = \frac{\delta_R(\bar{C}_A, \bar{C}_B)}{\frac{1}{2}(\sigma_{C_A} + \sigma_{C_B})}$$
+                </div>
+              </div>
+
+              <!-- Metric 2: Class Stability -->
+              <div class="mini-metric-pill-card" style="border-top: 3px solid var(--accent-secondary);">
+                <div style="font-size: 0.70rem; font-weight: 800; color: var(--accent-secondary); text-transform: uppercase;">Within-Class Consistency</div>
+                <h5 style="font-size: 0.92rem; margin: 4px 0;">Class Stability</h5>
+                <p style="font-size: 0.80rem; color: var(--text-secondary); margin-bottom: 8px;">
+                  Measures the consistency of spatial covariance patterns within a class.
+                </p>
+                <div class="term-math-box" style="font-size: 0.82rem; padding: 6px;">
+                  $$\text{classStab}(A) = \frac{1}{1 + \sigma_{C_A}}$$
+                </div>
+              </div>
+
+              <!-- Metric 3: Rest Distinctiveness -->
+              <div class="mini-metric-pill-card" style="border-top: 3px solid #52796F;">
+                <div style="font-size: 0.70rem; font-weight: 800; color: #52796F; text-transform: uppercase;">MI &harr; Baseline</div>
+                <h5 style="font-size: 0.92rem; margin: 4px 0;">Rest Distinctiveness</h5>
+                <p style="font-size: 0.80rem; color: var(--text-secondary); margin-bottom: 8px;">
+                  Measures separation between task-related imagery and pre-cue resting baseline.
+                </p>
+                <div class="term-math-box" style="font-size: 0.82rem; padding: 6px;">
+                  $$\text{restDis}(A) = \frac{\delta_R(\bar{C}_A, C_{\text{rest}})}{\frac{1}{2}(\sigma_{C_A} + \sigma_{\text{rest}})}$$
+                </div>
+              </div>
+            </div>
+
+            <!-- Manifold Diagram Embed -->
+            <div class="term-diagram-container" style="margin: 14px 0; background: #FFFFFF; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+              <img src="/assets/figures/aps_fig4_riemannian_manifold.png" alt="Representation of Metrics on the Riemannian Manifold" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);">
+              <p class="term-diagram-caption" style="font-size: 0.80rem; color: var(--text-secondary); margin-top: 8px;">
+                <strong>Geometric Representation on $\mathcal{S}_{++}^n$:</strong> Distinctiveness represents geodesic distances between class Fr&eacute;chet centroids ($\bar{C}_A, \bar{C}_B$) or task and rest baseline ($C_{\text{rest}}$), while stability reflects the inverse of intra-class trial dispersion ($\sigma_{C_A}$).
+              </p>
+            </div>
+
+            <!-- Why Three Metrics Box -->
+            <div class="subcard-box" style="margin: 10px 0 0 0; background: rgba(243, 239, 233, 0.6); padding: 12px 16px;">
+              <h5 style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">Why Three Metrics?</h5>
+              <p class="narrative-body-text" style="font-size: 0.86rem; margin-bottom: 0;">
+                Class distinctiveness captures separation between imagery classes, class stability captures within-class consistency, and rest distinctiveness captures separation from baseline activity.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Stage 4: Longitudinal Analysis -->
+        <details class="method-accordion-item" open>
+          <summary class="method-accordion-header">
+            <div class="accordion-title-group">
+              <span class="stage-step-pill">Stage 4</span>
+              <span class="accordion-heading">Longitudinal Neural Adaptation</span>
+            </div>
+            <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="method-accordion-body">
+            <p class="narrative-body-text" style="margin-bottom: 8px;">
+              To track how neural representations evolve over training, run-wise adaptation trajectories were computed for each participant:
+            </p>
+
+            <ul class="clean-bullet-list" style="margin-bottom: 10px;">
+              <li><strong>Feature Matrix:</strong> 3 metrics &times; 6 frequency bands = 18 combinations. Including class-specific components (Left vs. Right) yielded <strong>35 neural features</strong> per participant.</li>
+              <li><strong>Standardization:</strong> Population-level $z$-score normalization was applied to align metric scales across bands.</li>
+              <li><strong>Outlier Filtering:</strong> Extreme values exceeding $|Z| &gt; 2$ were removed.</li>
+              <li><strong>Trajectory Slope Fitting:</strong> OLS regression was fitted across the five runs:</li>
+            </ul>
+
+            <div class="term-math-box" style="margin: 8px 0; padding: 8px 14px;">
+              $$\text{Neural Metric} \sim \text{Run} \quad \longrightarrow \quad \text{Slope } \beta$$
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap;">
+              <div class="subcard-box" style="flex: 1; min-width: 200px; margin: 0; padding: 10px 14px; border-left: 3px solid #2E7D32;">
+                <span style="font-weight: 700; color: #2E7D32; font-size: 0.85rem;">Positive Slope (&plus;)</span>
+                <p style="font-size: 0.80rem; color: var(--text-secondary); margin: 2px 0 0 0;">Increasing neural modulation across runs.</p>
+              </div>
+              <div class="subcard-box" style="flex: 1; min-width: 200px; margin: 0; padding: 10px 14px; border-left: 3px solid #C62828;">
+                <span style="font-weight: 700; color: #C62828; font-size: 0.85rem;">Negative Slope (&minus;)</span>
+                <p style="font-size: 0.80rem; color: var(--text-secondary); margin: 2px 0 0 0;">Decreasing neural modulation across runs.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Stage 5: Statistical Analysis -->
+        <details class="method-accordion-item" open>
+          <summary class="method-accordion-header">
+            <div class="accordion-title-group">
+              <span class="stage-step-pill">Stage 5</span>
+              <span class="accordion-heading">Statistical Evaluation &amp; Benchmarking</span>
+            </div>
+            <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="method-accordion-body">
+            <div class="subcard-grid-3" style="margin-top: 0;">
+              <!-- Stat Card A -->
+              <div class="mini-metric-pill-card" style="background: #FFFFFF;">
+                <span style="font-size: 0.70rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase;">A. Correlation</span>
+                <h5 style="margin: 4px 0 6px 0; font-size: 0.90rem;">Spearman Rank Correlation</h5>
+                <p style="font-size: 0.80rem; margin-bottom: 0; color: var(--text-secondary);">
+                  Examined associations between expected MI-BCI performance and neural metric values across frequency bands, before and after behavioral stratification.
+                </p>
+              </div>
+
+              <!-- Stat Card B -->
+              <div class="mini-metric-pill-card" style="background: #FFFFFF;">
+                <span style="font-size: 0.70rem; font-weight: 800; color: var(--accent-secondary); text-transform: uppercase;">B. Group Differences</span>
+                <h5 style="margin: 4px 0 6px 0; font-size: 0.90rem;">Kruskal–Wallis Permutation</h5>
+                <p style="font-size: 0.80rem; margin-bottom: 0; color: var(--text-secondary);">
+                  Compared neural adaptation slopes across Improved, Unchanged, and Worsened groups using <strong>5,000 permutations</strong> ($p &lt; 0.05$), with post-hoc Mann–Whitney U and <strong>Holm–Bonferroni</strong> correction.
+                </p>
+              </div>
+
+              <!-- Stat Card C -->
+              <div class="mini-metric-pill-card" style="background: #FFFFFF;">
+                <span style="font-size: 0.70rem; font-weight: 800; color: #52796F; text-transform: uppercase;">C. Effect Sizes</span>
+                <h5 style="margin: 4px 0 6px 0; font-size: 0.90rem;">One-vs-Rest Cohen's d</h5>
+                <p style="font-size: 0.80rem; margin-bottom: 0; color: var(--text-secondary);">
+                  Compared the slope distribution of each behavioral group against the pooled remainder (Target vs. Rest) to identify signatures uniquely characteristic of each trajectory.
+                </p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div><!-- /.method-pipeline-accordion -->
+
+      <button type="button" class="btn-next-section-jump" data-next="stage-results">
+        <span>Next: 4. Results &amp; Metrics</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div id="payload-stage-results">
+      <div class="intro-headline-banner">
+        <h4 class="intro-section-title">4. Results &amp; Neural Metrics</h4>
+      </div>
+
+      <!-- Overview Callout -->
+      <div class="subcard-box tinted" style="border-left: 4px solid var(--accent-primary);">
+        <p class="narrative-body-text" style="margin-bottom: 0; font-size: 0.95rem; font-weight: 500;">
+          Participants were stratified based on behavioral performance trajectories across five training runs, followed by analyses of run-wise neural metric changes, frequency-specific relationships with performance, group-level slope differences, and discriminative neural signatures to examine how different dimensions of neural organization relate to MI-BCI learning.
+        </p>
+      </div>
+
+      <!-- Subsection 1: Behavioral Stratification (Figure 1) -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">1. Behavioral Stratification Across Training Runs</h4>
+        <p class="narrative-body-text">
+          Participants exhibited heterogeneous behavioral trajectories across the five runs. Based on the slope of reported BCI performance across runs, participants were categorized into three groups:
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong style="color: var(--color-improved, #2E7D32);">Improved ($n = 15$):</strong> Showed a progressive increase in reported performance from approximately <strong>$56\%$ in Run 1 to over $72\%$ by Run 5</strong> (Fig. 1A).</li>
+          <li><strong style="color: var(--color-unchanged, #E65100);">Unchanged ($n = 16$):</strong> Remained relatively stable around <strong>$60\text{--}62\%$</strong> across runs.</li>
+          <li><strong style="color: var(--color-worsened, #C62828);">Worsened ($n = 13$):</strong> Declined from about <strong>$72\%$ in Run 1 to $61\%$ by Run 5</strong>.</li>
+        </ul>
+
+        <div class="subcard-box" style="background: rgba(255, 255, 255, 0.85); margin: 12px 0 0 0; padding: 12px 16px;">
+          <h5 style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">Imagery Difficulty Pattern</h5>
+          <p class="narrative-body-text" style="font-size: 0.88rem; margin-bottom: 6px;">
+            Subjective imagery difficulty showed a different pattern from reported performance (Fig. 1B):
+          </p>
+          <ul class="clean-bullet-list" style="margin-bottom: 8px;">
+            <li>The <strong>Improved group</strong> reported moderate difficulty with a temporary improvement around Run 3.</li>
+            <li>The <strong>Worsened group</strong> reported relatively easy imagery throughout.</li>
+            <li>The <strong>Unchanged group</strong> consistently reported greater difficulty.</li>
+          </ul>
+          <blockquote class="takeaway-callout-quote" style="margin: 0; font-size: 0.86rem; line-height: 1.5;">
+            <strong>Takeaway:</strong> Perceived imagery ease did not directly correspond to performance improvements. Reported BCI performance reflects subjective evaluation of MI-BCI control, whereas imagery difficulty reflects how difficult participants perceived the motor imagery task itself.
+          </blockquote>
+        </div>
+
+        <div class="intro-figure-card result-figure-thumb" data-fig="fig1" style="cursor: pointer; margin-top: 14px;" title="Click to view high-resolution Figure 1 in Lightbox">
+          <img src="/assets/figures/fig1.jpg" alt="Figure 1: Behavioral Stratification Across 5 Runs">
+          <div class="intro-figure-caption">
+            <strong>Figure 1:</strong> a) Average self-reported expected MI-BCI performance (%) across 5 runs, categorized by learning slope (Improved, Unchanged, Worsened). b) Distribution of reported motor imagery difficulty ratings across 5 runs. <span style="color: var(--accent-primary); font-weight: 600;">[Click to inspect ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsection 2: Run-Wise Neural Metric Changes (Figure 2) -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">2. Run-Wise Neural Metric Changes</h4>
+        <p class="narrative-body-text">
+          To examine neural adaptation across runs, broadband Riemannian neural metrics were computed relative to each participant's Run 1 baseline, using the pre-cue baseline as the resting reference (Fig. 2):
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong>Improved Group:</strong> Showed increasing trends across <button type="button" class="glossary-chip" data-term="rest-distinctiveness">Rest Distinctiveness</button>, <button type="button" class="glossary-chip" data-term="class-stability">Class Stability</button>, and <button type="button" class="glossary-chip" data-term="class-distinctiveness">Class Distinctiveness</button> metrics, indicating progressively more separable and consistent motor imagery representations.</li>
+          <li><strong>Unchanged Group:</strong> Showed mild declining trends across class stability and left–right distinctiveness metrics, indicating limited longitudinal improvement in neural representations.</li>
+          <li><strong>Worsened Group:</strong> Showed mild increases in left–right distinctiveness and stability metrics, but decreasing rest distinctiveness, indicating progressively structured representations with reduced separation from baseline neural activity.</li>
+        </ul>
+
+        <div class="intro-figure-card result-figure-thumb" data-fig="fig2" style="cursor: pointer; margin-top: 14px;" title="Click to view high-resolution Figure 2 in Lightbox">
+          <img src="/assets/figures/fig2.jpg" alt="Figure 2: Longitudinal Neural Changes Across Runs">
+          <div class="intro-figure-caption">
+            <strong>Figure 2:</strong> Run-wise changes in broadband neural metrics across behavioral groups relative to each subject's Run 1 baseline. Lines represent median changes across subjects, and shaded regions indicate SEM across subjects. <span style="color: var(--accent-primary); font-weight: 600;">[Click to inspect ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsection 3: Frequency-Specific Neural Correlates (Figure 3) -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">3. Frequency-Specific Neural Correlates</h4>
+        <p class="narrative-body-text">
+          Spearman correlations were computed between reported behavioral performance and neural metrics across frequency bands ($\delta, \theta, \alpha, \beta, \gamma$, and broadband) (Fig. 3):
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong>Before Stratification (All Subjects):</strong> Across runs, correlations strengthened particularly in the <strong>beta ($13\text{--}30\text{ Hz}$)</strong> and <strong>gamma ($30\text{--}45\text{ Hz}$)</strong> bands, especially for rest-related distinctiveness and left–right separability.</li>
+          <li><strong>After Stratification (Behavioral Groups):</strong>
+            <ul style="padding-left: 18px; margin-top: 4px; list-style: disc;">
+              <li><strong>Improved Group:</strong> Showed stronger and more consistent correlations in lower frequency bands.</li>
+              <li><strong>Unchanged Group:</strong> Exhibited weaker and more heterogeneous relationships.</li>
+              <li><strong>Worsened Group:</strong> Correlations were primarily observed in higher frequency bands, suggesting that spectral features alone may not fully explain the decline in performance.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="intro-figure-card result-figure-thumb" data-fig="fig3" style="cursor: pointer; margin-top: 14px;" title="Click to view high-resolution Figure 3 in Lightbox">
+          <img src="/assets/figures/fig3.jpg" alt="Figure 3: Frequency-Specific Neural Correlates">
+          <div class="intro-figure-caption">
+            <strong>Figure 3:</strong> Spearman correlation heatmaps between expected MI-BCI performance and neural metric values across frequency bands for all subjects and behavioral groups (* $p &lt; 0.05$, ** $p &lt; 0.01$). <span style="color: var(--accent-primary); font-weight: 600;">[Click to inspect ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsection 4: Divergent Neural Adaptation Slopes (Figure 4) -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">4. Divergent Neural Adaptation Slopes Across Groups</h4>
+        <p class="narrative-body-text">
+          To quantify longitudinal changes, slopes of neural metrics were computed across runs. Significant differences in neural adaptation slopes were observed among behavioral groups using permutation-based <button type="button" class="glossary-chip" data-term="kruskal-wallis">Kruskal–Wallis</button> tests ($5{,}000$ iterations) with Holm-corrected post-hoc Mann–Whitney U tests ($p &lt; 0.05$) (Fig. 4):
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong>Alpha-Band Rest Distinctiveness:</strong> <code>left_rest_alpha</code> and <code>right_rest_alpha</code> showed positive slopes in the Improved group, but negative or near-zero slopes in the Worsened group.</li>
+          <li><strong>Broadband Stability:</strong> Increased in the Improved group but decreased in the Unchanged group.</li>
+          <li><strong>Left–Right Broadband Distinctiveness &amp; Gamma-Band Separability:</strong> Increased in the Improved group, but remained stable or decreased in the other groups.</li>
+        </ul>
+        <blockquote class="takeaway-callout-quote" style="margin-top: 10px; font-size: 0.88rem; line-height: 1.5;">
+          <strong>Takeaway:</strong> Improvement in MI is associated with positive neural adaptation across multiple representational dimensions rather than a single isolated feature.
+        </blockquote>
+
+        <div class="intro-figure-card result-figure-thumb" data-fig="fig4" style="cursor: pointer; margin-top: 14px;" title="Click to view high-resolution Figure 4 in Lightbox">
+          <img src="/assets/figures/fig4.jpg" alt="Figure 4: Divergent Neural Adaptation Slopes">
+          <div class="intro-figure-caption">
+            <strong>Figure 4:</strong> Divergent neural adaptation trends across behavioral groups. Subplots show mean slopes of neural metrics across training runs (permutation-based Kruskal-Wallis test with Holm-corrected Mann-Whitney U, $p &lt; 0.05$). <span style="color: var(--accent-primary); font-weight: 600;">[Click to inspect ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsection 5: OVR Neural Signatures (Figure 5) -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">5. Neural Signatures of Behavioral Learning Trajectories</h4>
+        <p class="narrative-body-text">
+          A One-vs-Rest (OVR) effect size analysis using <button type="button" class="glossary-chip" data-term="cohens-d">Cohen's d</button> on the longitudinal slopes identified the neural features distinguishing each behavioral group (Fig. 5):
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong>Improved Group:</strong> Showed strong positive effect sizes for broadband stability and left–right separability, indicating that increased neural consistency and class separability characterize successful learners.</li>
+          <li><strong>Unchanged Group:</strong> Exhibited negative effect sizes for stability and class-separability metrics, suggesting weaker neural structuring despite increased task–rest divergence.</li>
+          <li><strong>Worsened Group:</strong> Showed large negative effect sizes for rest-related alpha and broadband metrics, indicating that reduced separation from baseline activity characterizes declining performance.</li>
+        </ul>
+
+        <div class="intro-figure-card result-figure-thumb" data-fig="fig5" style="cursor: pointer; margin-top: 14px;" title="Click to view high-resolution Figure 5 in Lightbox">
+          <img src="/assets/figures/fig5.jpg" alt="Figure 5: Discriminative Neural Signatures">
+          <div class="intro-figure-caption">
+            <strong>Figure 5:</strong> Discriminative neural signatures identified using One-vs-Rest (OVR) analysis. Top neural metric slopes distinguishing each behavioral group, ranked by Cohen's $d$ effect size. <span style="color: var(--accent-primary); font-weight: 600;">[Click to inspect ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsection 6: Classifier-Based Validation (Figure 6) -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">6. Classifier-Based Validation of Behavioral Groups</h4>
+        <p class="narrative-body-text">
+          To determine whether these behavioral groups were reflected in decoding performance, a subject-specific Riemannian <button type="button" class="glossary-chip" data-term="mdm-classifier">Minimum Distance to Mean (MDM)</button> classifier was applied to classify left versus right motor imagery:
+        </p>
+        <ul class="clean-bullet-list">
+          <li><strong>Classification Accuracy Across Groups:</strong> Classification accuracy differed across groups (Fig. 6A). The <strong>Improved group</strong> achieved the highest median accuracy ($\sim81\%$), while the <strong>Worsened</strong> ($\sim69\%$) and <strong>Unchanged</strong> ($\sim63\%$) groups achieved lower accuracies.</li>
+          <li><strong>Correlation with Learning Slope:</strong> Classifier accuracy was positively correlated with behavioral learning slope (<strong>Pearson $r = 0.321, p = 0.034$</strong>; Fig. 6B), indicating that stronger behavioral improvement corresponded to greater neural decodability.</li>
+        </ul>
+
+        <div class="intro-figure-card result-figure-thumb" data-fig="fig6" style="cursor: pointer; margin-top: 14px;" title="Click to view high-resolution Figure 6 in Lightbox">
+          <img src="/assets/figures/fig6.jpg" alt="Figure 6: Relationship between classifier performance and behavioral learning trends">
+          <div class="intro-figure-caption">
+            <strong>Figure 6:</strong> Relationship between classifier performance and behavioral learning trends. Left: Distribution of subject-wise MDM classification accuracy across behavioral groups. Right: Positive correlation between classification accuracy and behavioral performance slope (Pearson $r = 0.321, p = 0.034$). <span style="color: var(--accent-primary); font-weight: 600;">[Click to inspect ↗]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Gallery Strip for Figures 1 to 6 -->
+      <h4 style="font-size: 0.92rem; margin-top: 22px; margin-bottom: 8px; color: var(--text-secondary); font-weight: 700;">Poster Figure Gallery (Click to inspect high-resolution):</h4>
+      <div class="results-preview-strip">
+        <div class="result-figure-thumb" data-fig="fig1">
+          <img src="/assets/figures/fig1.jpg" alt="Figure 1: Behavioral Stratification">
+          <span>Fig. 1: Behavior</span>
+        </div>
+        <div class="result-figure-thumb" data-fig="fig2">
+          <img src="/assets/figures/fig2.jpg" alt="Figure 2: Longitudinal Neural Changes">
+          <span style="color: var(--accent-secondary); font-weight: 800;">Fig. 2: Neural Metrics</span>
+        </div>
+        <div class="result-figure-thumb" data-fig="fig3">
+          <img src="/assets/figures/fig3.jpg" alt="Figure 3: Spectral Correlations">
+          <span>Fig. 3: Spectral</span>
+        </div>
+        <div class="result-figure-thumb" data-fig="fig4">
+          <img src="/assets/figures/fig4.jpg" alt="Figure 4: Permutation Slopes">
+          <span>Fig. 4: Slopes</span>
+        </div>
+        <div class="result-figure-thumb" data-fig="fig5">
+          <img src="/assets/figures/fig5.jpg" alt="Figure 5: OVR Effect Sizes">
+          <span>Fig. 5: Effect Sizes</span>
+        </div>
+        <div class="result-figure-thumb" data-fig="fig6">
+          <img src="/assets/figures/fig6.jpg" alt="Figure 6: MDM Decoding Validation">
+          <span>Fig. 6: MDM Decoding</span>
+        </div>
+      </div>
+
+      <!-- Key Finding Callout -->
+      <div class="subcard-box tinted" style="border-left: 4px solid var(--accent-primary); margin-top: 22px; background: rgba(43, 103, 119, 0.08);">
+        <h4 class="subcard-title" style="color: var(--accent-primary); margin-bottom: 8px;">Key Finding</h4>
+        <blockquote class="takeaway-callout-quote" style="margin: 0; font-size: 0.95rem; font-weight: 500; line-height: 1.6; border-left: none; padding: 0; background: transparent; color: var(--text-primary);">
+          MI-BCI learning was associated with changes across multiple dimensions of neural organization, including class stability, class distinctiveness, and rest distinctiveness. The observed patterns suggest that hemispheric separability alone may not fully explain differences in MI-BCI learning trajectories.
+        </blockquote>
+      </div>
+
+      <button type="button" class="btn-next-section-jump" data-next="stage-conclusion" style="margin-top: 24px;">
+        <span>Next: 5. Discussion &amp; Conclusion</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div id="payload-stage-conclusion">
+      <div class="intro-headline-banner">
+        <h4 class="intro-section-title">5. Discussion &amp; Conclusion</h4>
+      </div>
+
+      <!-- What did we find? -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">What Did We Find?</h4>
+        <blockquote class="takeaway-callout-quote" style="margin-top: 0; font-size: 0.94rem; border-left-color: var(--accent-primary); color: var(--accent-primary); background: rgba(43, 103, 119, 0.08);">
+          Our results show that MI-BCI learning is associated with changes across multiple dimensions of neural organization, including <button type="button" class="glossary-chip" data-term="three-metric-coordination">class stability, class distinctiveness, and rest distinctiveness</button>.
+        </blockquote>
+        <ul class="clean-bullet-list" style="margin-top: 12px; margin-bottom: 0;">
+          <li><strong style="color: var(--color-improved, #2E7D32);">Improved:</strong> Increasing trends across rest distinctiveness, class stability, and left–right distinctiveness.</li>
+          <li><strong style="color: var(--color-unchanged, #E65100);">Unchanged:</strong> Declining trends in class stability and left–right distinctiveness.</li>
+          <li><strong style="color: var(--color-worsened, #C62828);">Worsened:</strong> Decreasing rest distinctiveness despite mild increases in left–right distinctiveness and stability.</li>
+        </ul>
+      </div>
+
+      <!-- Beyond Hemispheric Laterality -->
+      <div class="subcard-box tinted" style="border-left: 4px solid var(--accent-secondary);">
+        <h4 class="subcard-title" style="color: var(--accent-secondary);">Beyond Hemispheric Laterality</h4>
+        <blockquote class="takeaway-callout-quote" style="margin-top: 0; font-size: 0.94rem; line-height: 1.6; border-left-color: var(--accent-secondary); background: rgba(224, 122, 95, 0.08);">
+          Both Improved and Worsened participants showed increasing left–right distinctiveness, while their behavioral trajectories differed. This suggests that <strong>hemispheric separability alone may not fully explain differences in MI-BCI learning trajectories</strong>.
+        </blockquote>
+      </div>
+
+      <!-- Different Dimensions, Different Learning Trajectories -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">Different Dimensions, Different Learning Trajectories</h4>
+        <p class="narrative-body-text" style="margin-bottom: 8px;">
+          The OVR analysis further showed that the behavioral groups were characterized by different neural adaptation signatures across metric and frequency-band combinations:
+        </p>
+        <ul class="clean-bullet-list" style="margin-bottom: 0;">
+          <li><strong style="color: var(--color-improved, #2E7D32);">Improved:</strong> Strong positive effects for broadband stability and left–right separability.</li>
+          <li><strong style="color: var(--color-unchanged, #E65100);">Unchanged:</strong> Negative effects for stability and class-separability metrics.</li>
+          <li><strong style="color: var(--color-worsened, #C62828);">Worsened:</strong> Large negative effects for rest-related alpha and broadband metrics.</li>
+        </ul>
+      </div>
+
+      <!-- Implications & Future Directions -->
+      <div class="subcard-box">
+        <h4 class="subcard-title">Implications &amp; Future Directions</h4>
+        <blockquote class="takeaway-callout-quote" style="margin-top: 0; font-size: 0.92rem; line-height: 1.6;">
+          These findings motivate future investigation of <button type="button" class="glossary-chip" data-term="adaptive-neurofeedback">multidimensional neurofeedback</button>, where training could target not only class separability but also neural stability and separation from baseline activity.
+        </blockquote>
+        <ul class="clean-bullet-list" style="margin-top: 12px; margin-bottom: 0;">
+          <li><strong>Individual Trajectory Tracking:</strong> Track individual neural trajectories during training.</li>
+          <li><strong>Metric-Specific Feedback:</strong> Investigate whether metric-specific feedback can improve MI-BCI learning.</li>
+          <li><strong>Cross-Paradigm Generalization:</strong> Examine whether these neural adaptation patterns generalize to other BCI paradigms and populations.</li>
+        </ul>
+      </div>
+
+      <!-- Final Takeaway -->
+      <div class="subcard-box tinted" style="border-left: 4px solid var(--accent-primary); background: rgba(43, 103, 119, 0.08); margin-top: 20px;">
+        <h4 class="subcard-title" style="color: var(--accent-primary); margin-bottom: 8px;">Final Takeaway</h4>
+        <p class="narrative-body-text" style="font-size: 0.96rem; font-weight: 600; line-height: 1.6; margin-bottom: 0; color: var(--text-primary);">
+          MI-BCI learning involves multiple dimensions of neural organization. Tracking class stability, class distinctiveness, and rest distinctiveness may provide a more comprehensive view of neural adaptation than hemispheric separability alone.
+        </p>
+      </div>
+
+      <button type="button" class="btn-next-section-jump" data-next="stage-references" style="margin-top: 24px;">
+        <span>Next: 6. References &amp; Materials</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div id="payload-stage-references">
+      <div class="subcard-box" style="font-size: 0.84rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 24px;">
+        <p><strong>[1]</strong> Lotte, F., &amp; Jeunet, C. (2018). Defining and quantifying users' mental imagery-based BCI skills: a first step. <em>Journal of Neural Engineering</em>, 15(4), 046030.</p>
+        <p style="margin-top:8px;"><strong>[2]</strong> Barachant, A., et al. (2012). Multiclass brain-computer interface classification by Riemannian geometry. <em>IEEE TBME</em>, 59(4), 920-928.</p>
+        <p style="margin-top:8px;"><strong>[3]</strong> Zich, C., et al. (2015). Real-time EEG-fMRI reveals distinct neural mechanisms of BCI performance in healthy users. <em>NeuroImage</em>, 114, 255-263.</p>
+        <p style="margin-top:8px;"><strong>[4]</strong> Cho, H., et al. (2017). EEG dataset for motor imagery brain-computer interface. <em>GigaScience</em>, 6(7), gix034.</p>
+      </div>
+
+      <!-- Paper Download & Profile Cards -->
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+        <a href="/assets/poster.pdf" target="_blank" class="btn-header-action primary" style="padding: 0 20px; height: 44px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Download Full Poster (PDF)</span>
+        </a>
+
+        <a href="/assets/paper.pdf" target="_blank" class="btn-header-action" style="padding: 0 18px; height: 44px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Submitted Manuscript (PDF)</span>
+        </a>
+
+        <a href="https://bionichuman.cc" target="_blank" class="btn-header-action" style="height: 44px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Sainath's Profile (bionichuman.cc) ↗</span>
+        </a>
+
+        <a href="https://hmnn-lab.com" target="_blank" class="btn-header-action" style="height: 44px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>HMNN Lab (hmnn-lab.com) ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 1: Glossary Term Explainer Popup
+       ========================================================================= -->
+  <div class="modal-overlay" id="term-modal" aria-hidden="true" role="dialog" aria-labelledby="term-modal-title">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <div class="modal-title-group">
+          <span class="modal-category-tag" id="term-modal-cat">Differential Geometry</span>
+          <h3 class="modal-title" id="term-modal-title">Riemannian Manifold</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btn-close-term-modal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-scroll-body">
+        <p id="term-modal-plain" style="font-size: 1.02rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 14px;"></p>
+
+        <!-- LaTeX Formula Box -->
+        <div class="term-math-box" id="term-modal-math"></div>
+
+        <!-- Explanatory Diagram Box -->
+        <div class="term-diagram-container" id="term-modal-diagram-box">
+          <img src="/assets/figures/aps_fig4_riemannian_manifold.png" alt="Concept Diagram" id="term-modal-img">
+          <p class="term-diagram-caption" id="term-modal-caption"></p>
+        </div>
+
+        <!-- Neuroscientific Significance Box -->
+        <div class="term-significance-box" id="term-modal-significance"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: Question Portal (Attendee Messenger + Author Mode)
+       ========================================================================= -->
+  <div class="modal-overlay" id="qa-modal" aria-hidden="true" role="dialog" aria-labelledby="qa-modal-title">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <div class="modal-title-group">
+          <span class="modal-category-tag">Live Messenger</span>
+          <h3 class="modal-title" id="qa-modal-title">Chat with Sainath Murali</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btn-close-qa-modal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-scroll-body messenger-panel-box">
+        <!-- Author Mode Toggle Bar -->
+        <div class="author-admin-drawer">
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--banner-text);">
+            <span id="qa-mode-indicator">Mode: Attendee</span>
+          </div>
+          <button type="button" class="btn-header-action" id="btn-toggle-author-mode" style="min-height: 30px; font-size: 0.74rem; padding: 0 10px;">
+            Author Login
+          </button>
+        </div>
+
+        <!-- Attendee Profile Input (Only in Attendee mode) -->
+        <div id="attendee-info-row" style="display: flex; gap: 8px; margin-bottom: 10px;">
+          <input type="text" id="attendee-name-input" class="composer-text-input" placeholder="Your Name (e.g. Dr. Alex Vance)" style="flex: 1; height: 38px; font-size: 0.84rem;">
+          <input type="text" id="attendee-affil-input" class="composer-text-input" placeholder="Affiliation (optional)" style="flex: 1; height: 38px; font-size: 0.84rem;">
+        </div>
+
+        <!-- Quick Question Chips -->
+        <div style="display: flex; flex-wrap: gap; gap: 6px; margin-bottom: 10px;" id="quick-questions-wrapper">
+          <button type="button" class="glossary-chip quick-question-chip" data-query="Why does left-right distinctiveness increase in worse learners?">Why does left-right distinctiveness increase in worse learners?</button>
+          <button type="button" class="glossary-chip quick-question-chip" data-query="Why use a pre-cue baseline instead of continuous rest?">Why use pre-cue baseline instead of continuous rest?</button>
+          <button type="button" class="glossary-chip quick-question-chip" data-query="What is the physical interpretation of Class Stability?">What is Class Stability?</button>
+        </div>
+
+        <!-- Live Message Stream -->
+        <div class="msg-stream-area" id="qa-stream-area">
+          <!-- Populated by app.js -->
+        </div>
+
+        <!-- Composer Row -->
+        <form class="composer-row" id="qa-composer-form">
+          <input type="text" id="qa-message-input" class="composer-text-input" placeholder="Type your question or message here..." autocomplete="off">
+          <button type="submit" class="btn-send-round" aria-label="Send message">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 3: About Author & PI Dialog
+       ========================================================================= -->
+  <div class="modal-overlay" id="about-modal" aria-hidden="true" role="dialog" aria-labelledby="about-modal-title">
+    <div class="modal-window wide">
+      <div class="modal-header-bar">
+        <div class="modal-title-group">
+          <span class="modal-category-tag">Poster #105</span>
+          <h3 class="modal-title" id="about-modal-title">About the Author &amp; Lab</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btn-close-about-modal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-scroll-body">
+        <div class="about-profiles-grid">
+
+          <!-- Author: Sainath Murali -->
+          <div class="about-card">
+            <div class="about-card-header">
+              <div class="avatar-disc">SM</div>
+              <div>
+                <h4 class="about-name">Sainath Murali</h4>
+                <div class="about-role">First Author &amp; Presenter</div>
+                <div class="about-affil">Dept. of Biosciences &amp; Bioengineering, IIT Bombay</div>
+              </div>
+            </div>
+
+            <p class="about-bio">
+              Neuroengineering researcher specializing in non-invasive Brain-Computer Interfaces, Riemannian manifold geometry, and longitudinal neural representation dynamics. Leading research on moving beyond traditional laterality paradigms to develop adaptive neurofeedback architectures for motor rehabilitation.
+            </p>
+
+            <a href="https://bionichuman.cc" target="_blank" class="about-link-btn" title="Visit Sainath's Personal Website">
+              <span>bionichuman.cc</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- PI: Prof. Nivethida Thirugnanasambandam -->
+          <div class="about-card">
+            <div class="about-card-header">
+              <div class="avatar-disc pi">NT</div>
+              <div>
+                <h4 class="about-name">Prof. Nivethida Thirugnanasambandam</h4>
+                <div class="about-role">Principal Investigator &amp; Corresponding Author</div>
+                <div class="about-affil">HMNN Lab • IIT Bombay &amp; KCDH</div>
+              </div>
+            </div>
+
+            <p class="about-bio">
+              Head of the Human Movement and Neuromodulation (HMNN) Laboratory at IIT Bombay. Expert in neurophysiology, non-invasive brain stimulation (TMS, tDCS), motor learning mechanisms, and translational clinical neurorehabilitation for stroke and movement disorders.
+            </p>
+
+            <a href="https://hmnn-lab.com" target="_blank" class="about-link-btn pi-btn" title="Visit HMNN Lab Website">
+              <span>hmnn-lab.com</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+        </div><!-- /.about-profiles-grid -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 4: Read Paper (PDF Viewer)
+       ========================================================================= -->
+  <div class="modal-overlay" id="pdf-modal" aria-hidden="true" role="dialog" aria-labelledby="pdf-modal-title">
+    <div class="modal-window wide" style="height: 92vh;">
+      <div class="modal-header-bar">
+        <div class="modal-title-group">
+          <span class="modal-category-tag">Submitted Manuscript</span>
+          <h3 class="modal-title" id="pdf-modal-title">Paper #105 • Graz BCI 2026</h3>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="/assets/paper.pdf" download class="btn-header-action" style="min-height: 30px; font-size: 0.74rem;">
+            Download PDF
+          </a>
+          <button type="button" class="btn-modal-close" id="btn-close-pdf-modal" aria-label="Close dialog">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-scroll-body" style="padding: 0; display: flex; flex-direction: column;">
+        <iframe src="/assets/paper.pdf" title="Submitted Manuscript PDF" style="width: 100%; height: 100%; border: none; flex-grow: 1;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 5: Figure Lightbox Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="figure-modal" aria-hidden="true" role="dialog" aria-labelledby="fig-modal-title">
+    <div class="modal-window wide">
+      <div class="modal-header-bar">
+        <div class="modal-title-group">
+          <span class="modal-category-tag" id="fig-modal-tag">Poster Figure</span>
+          <h3 class="modal-title" id="fig-modal-title">Figure</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btn-close-fig-modal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-scroll-body">
+        <div style="text-align: center; margin-bottom: 14px;">
+          <img src="" alt="Figure View" id="fig-modal-img" style="max-height: 60vh; margin: 0 auto; border-radius: var(--radius-sm);">
+        </div>
+        <p id="fig-modal-caption" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;"></p>
+        <ul id="fig-modal-takeaways" style="padding-left: 20px; font-size: 0.88rem; color: var(--text-primary); margin-top: 10px; line-height: 1.6;"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Scripts
+       ========================================================================= -->
+  <!-- KaTeX JavaScript Engine & Auto-Render -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
