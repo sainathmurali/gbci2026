@@ -20,7 +20,7 @@ let threads = [
         id: "msg-1-2",
         sender: "author",
         senderName: "Sainath Murali (Author)",
-        text: "Great question! The pre-cue baseline (-1.99s to 0s) was chosen to remain strictly consistent with the foundational work by Lotte & Jeunet (2018) and to isolate dynamic, trial-by-trial task vs. baseline divergence. Because resting states drift over long experimental blocks, trial-wise baselines capture run-wise neural adaptation during MI training much more sensitively than a static baseline.",
+        text: "Great question! The pre-cue baseline (-1.5s to 0s) was chosen to remain strictly consistent with the foundational work by Lotte & Jeunet (2018) and to isolate dynamic, trial-by-trial task vs. baseline divergence. Because resting states drift over long experimental blocks, trial-wise baselines capture run-wise neural adaptation during MI training much more sensitively than a static baseline.",
         timestamp: "2026-09-10T11:15:00Z"
       }
     ]

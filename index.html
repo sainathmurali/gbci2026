@@ -469,9 +469,9 @@
                 $$\text{Expected Performance} \sim \text{Run} \quad \longrightarrow \quad \text{Slope (\% change / run)}$$
               </div>
               <div class="cohort-badges-row" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
-                <span class="cohort-badge improved"><strong>Improved</strong> ($n = 15$): Positive Slope</span>
-                <span class="cohort-badge unchanged"><strong>Unchanged</strong> ($n = 16$): Intermediate Slope</span>
-                <span class="cohort-badge worsened"><strong>Worsened</strong> ($n = 13$): Negative Slope</span>
+                <span class="cohort-badge improved"><strong>Improved</strong> ($n = 13$): Positive Slope</span>
+                <span class="cohort-badge unchanged"><strong>Unchanged</strong> ($n = 20$): Intermediate Slope</span>
+                <span class="cohort-badge worsened"><strong>Worsened</strong> ($n = 11$): Negative Slope</span>
               </div>
             </div>
           </div>
@@ -488,7 +488,7 @@
           </summary>
           <div class="method-accordion-body">
             <p class="narrative-body-text" style="margin-bottom: 8px;">
-              Raw signals were preprocessed in <strong>MNE-Python</strong> using a standardized 10-step cleaning pipeline:
+              Raw signals were preprocessed in <strong>MNE-Python</strong> using a standardized 8-step cleaning pipeline:
             </p>
 
             <ol class="numbered-pipeline-list">
@@ -509,7 +509,7 @@
                 <ul class="clean-bullet-list" style="margin: 0; font-size: 0.84rem;">
                   <li><strong>Full Epoch:</strong> &minus;1.99 s to +5.0 s relative to cue onset</li>
                   <li><strong>Motor Imagery Window:</strong> 0.0 s to 3.0 s (active task)</li>
-                  <li><strong>Resting Reference:</strong> &minus;1.99 s to 0.0 s (trial-wise pre-cue baseline)</li>
+                  <li><strong>Resting Reference:</strong> &minus;1.5 s to 0.0 s (trial-wise pre-cue baseline)</li>
                 </ul>
               </div>
 
@@ -547,7 +547,7 @@
           </summary>
           <div class="method-accordion-body">
             <blockquote class="takeaway-callout-quote" style="margin: 0 0 14px 0; font-size: 0.90rem; border-left-color: var(--accent-primary); color: var(--text-primary); background: rgba(43, 103, 119, 0.07);">
-              Each MI trial was represented by its multichannel covariance structure. These covariance matrices were analyzed using Riemannian geometry on the manifold $\mathcal{S}_{++}^n$ and the three classifier-independent metrics proposed by Lotte &amp; Jeunet [9].
+              Each MI trial was represented by its multichannel covariance structure. These covariance matrices were analyzed using Riemannian geometry on the manifold $\mathcal{S}_{++}^n$ and the three classifier-independent metrics proposed by Lotte &amp; Jeunet [1].
             </blockquote>
 
             <!-- Three Clickable Metric Formula Cards -->
@@ -622,7 +622,7 @@
             </p>
 
             <ul class="clean-bullet-list" style="margin-bottom: 10px;">
-              <li><strong>Feature Matrix:</strong> 3 metrics &times; 6 frequency bands = 18 combinations. Including class-specific components (Left vs. Right) yielded <strong>35 neural features</strong> per participant.</li>
+              <li><strong>Feature Matrix:</strong> Yielded 5 metric variants (left–right distinctiveness, left-rest and right-rest distinctiveness, left and right stability) &times; 6 bands = <strong>30 neural features</strong> per participant.</li>
               <li><strong>Standardization:</strong> Population-level $z$-score normalization was applied to align metric scales across bands.</li>
               <li><strong>Outlier Filtering:</strong> Extreme values exceeding $|Z| &gt; 2$ were removed.</li>
               <li><strong>Trajectory Slope Fitting:</strong> OLS regression was fitted across the five runs:</li>
@@ -713,9 +713,9 @@
           Participants exhibited heterogeneous behavioral trajectories across the five runs. Based on the slope of reported BCI performance across runs, participants were categorized into three groups:
         </p>
         <ul class="clean-bullet-list">
-          <li><strong style="color: var(--color-improved, #2E7D32);">Improved ($n = 15$):</strong> Showed a progressive increase in reported performance from approximately <strong>$56\%$ in Run 1 to over $72\%$ by Run 5</strong> (Fig. 1A).</li>
-          <li><strong style="color: var(--color-unchanged, #E65100);">Unchanged ($n = 16$):</strong> Remained relatively stable around <strong>$60\text{--}62\%$</strong> across runs.</li>
-          <li><strong style="color: var(--color-worsened, #C62828);">Worsened ($n = 13$):</strong> Declined from about <strong>$72\%$ in Run 1 to $61\%$ by Run 5</strong>.</li>
+          <li><strong style="color: var(--color-improved, #2E7D32);">Improved ($n = 13$):</strong> Showed a progressive increase in reported performance from approximately <strong>$56\%$ in Run 1 to over $72\%$ by Run 5</strong> (Fig. 1A).</li>
+          <li><strong style="color: var(--color-unchanged, #E65100);">Unchanged ($n = 20$):</strong> Remained relatively stable around <strong>$60\text{--}62\%$</strong> across runs.</li>
+          <li><strong style="color: var(--color-worsened, #C62828);">Worsened ($n = 11$):</strong> Declined from about <strong>$72\%$ in Run 1 to $61\%$ by Run 5</strong>.</li>
         </ul>
 
         <div class="subcard-box" style="background: rgba(255, 255, 255, 0.85); margin: 12px 0 0 0; padding: 12px 16px;">
@@ -961,8 +961,8 @@
       <div class="subcard-box" style="font-size: 0.84rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 24px;">
         <p><strong>[1]</strong> Lotte, F., &amp; Jeunet, C. (2018). Defining and quantifying users' mental imagery-based BCI skills: a first step. <em>Journal of Neural Engineering</em>, 15(4), 046030.</p>
         <p style="margin-top:8px;"><strong>[2]</strong> Barachant, A., et al. (2012). Multiclass brain-computer interface classification by Riemannian geometry. <em>IEEE TBME</em>, 59(4), 920-928.</p>
-        <p style="margin-top:8px;"><strong>[3]</strong> Zich, C., et al. (2015). Real-time EEG-fMRI reveals distinct neural mechanisms of BCI performance in healthy users. <em>NeuroImage</em>, 114, 255-263.</p>
-        <p style="margin-top:8px;"><strong>[4]</strong> Cho, H., et al. (2017). EEG dataset for motor imagery brain-computer interface. <em>GigaScience</em>, 6(7), gix034.</p>
+        <p style="margin-top:8px;"><strong>[3]</strong> Zich, C., et al. (2015). Real-time EEG feedback during simultaneous EEG-fMRI identifies the cortical signature of motor imagery. <em>NeuroImage</em>, 114, 438-447.</p>
+        <p style="margin-top:8px;"><strong>[4]</strong> Cho, H., et al. (2017). EEG datasets for motor imagery brain-computer interface. <em>GigaScience</em>, 6(7), gix034.</p>
       </div>
 
       <!-- Paper Download & Profile Cards -->
@@ -1126,7 +1126,7 @@
             </div>
 
             <p class="about-bio">
-              Head of the Human Movement and Neuromodulation (HMNN) Laboratory at IIT Bombay. Expert in neurophysiology, non-invasive brain stimulation (TMS, tDCS), motor learning mechanisms, and translational clinical neurorehabilitation for stroke and movement disorders.
+              Head of the Human Motor Neurophysiology and Neuromodulation (HMNN) Laboratory at IIT Bombay. Expert in neurophysiology, non-invasive brain stimulation (TMS, tDCS), motor learning mechanisms, and translational clinical neurorehabilitation for stroke and movement disorders.
             </p>
 
             <a href="https://hmnn-lab.com" target="_blank" class="about-link-btn pi-btn" title="Visit HMNN Lab Website">

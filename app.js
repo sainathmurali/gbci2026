@@ -115,10 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
       significance: "Critical finding: In the Worsened group, task-to-rest divergence collapsed across runs even while left-right separation widened. Worsened participants lost the ability to disengage from rest."
     },
     "pre-cue-baseline": {
-      name: "Pre-Cue Resting Reference ([-1.99 s, 0 s])",
+      name: "Pre-Cue Resting Reference ([-1.5 s, 0 s])",
       category: "Experimental Protocol",
       plain: "The brief resting window immediately preceding each trial's visual cue, used as the local rest baseline instead of a separate continuous resting recording.",
-      math: "t \\in [-1.99, 0.0] \\text{ s relative to cue onset}",
+      math: "t \\in [-1.5, 0.0] \\text{ s relative to cue onset}",
       imgSrc: "/assets/figures/aps_fig3_mi_task_paradigm.png",
       caption: "Trial timeline: 2 s pre-cue fixation, 3 s kinesthetic motor imagery window, and variable 4.1–4.8 s inter-trial interval.",
       significance: "Adopted following Lotte & Jeunet (2018). Isolates dynamic trial-by-trial task engagement while eliminating the long-duration physiological drift inherent in separate rest sessions."
@@ -1100,7 +1100,7 @@ document.addEventListener("DOMContentLoaded", () => {
               {
                 sender: "author",
                 senderName: "Sainath Murali (Author)",
-                text: "Great question! The pre-cue baseline (-1.99s to 0s) isolates dynamic trial-by-trial task vs baseline divergence. Because resting states drift over long sessions, trial-wise baselines capture run-wise neural adaptation during MI training much more sensitively than static baseline blocks.",
+                text: "Great question! The pre-cue baseline (-1.5s to 0s) isolates dynamic trial-by-trial task vs baseline divergence. Because resting states drift over long sessions, trial-wise baselines capture run-wise neural adaptation during MI training much more sensitively than static baseline blocks.",
                 timestamp: "2026-09-10T11:15:00Z"
               }
             ]
